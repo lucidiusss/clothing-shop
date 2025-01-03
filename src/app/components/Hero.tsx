@@ -1,6 +1,5 @@
 import { Button, buttonVariants } from "@/components/ui/button";
 import localFont from "next/font/local";
-Button;
 const integralBold = localFont({ src: "../../assets/IntegralCF-Bold.woff" });
 
 const Hero = () => {
