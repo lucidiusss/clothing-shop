@@ -8,22 +8,22 @@ const integralBold = localFont({ src: "../../assets/IntegralCF-Bold.woff" });
 
 const Header: React.FC = () => {
   return (
-    <MaxWidthWrapper className="absolute top-0 left-0 bg-white py-6 w-full">
+    <MaxWidthWrapper className="bg-white py-6 w-full">
       <header>
         <nav>
           <ul className="flex flex-row items-center w-full justify-between lg:justify-normal">
             <div className="flex flex-row items-center gap-3">
-              <li className="lg:hidden block">
+              <button className="lg:hidden block">
                 <Menu className="w-6 h-6" />
-              </li>
-              <li>
+              </button>
+              <button>
                 <Link
                   className={`uppercase font-bold text-[24px] md:text-[32px] leading-none ${integralBold.className}`}
                   href="/"
                 >
                   Shop.co
                 </Link>
-              </li>
+              </button>
             </div>
 
             <div className="flex-row  min-w-fit mx-10 items-center gap-5 hidden lg:flex">
@@ -63,26 +63,26 @@ const Header: React.FC = () => {
             <SearchInput />
             <div className="flex ml-10 min-w-fit flex-row items-center gap-2">
               <div className="flex items-center flex-row lg:hidden">
-                <li>
+                <button>
                   <Search
                     color="black"
                     className="w-6 h-6 lg:w-[20px] lg:h-[20px]"
                   />
-                </li>
+                </button>
               </div>
               <div className="flex flex-row items-center gap-2 justify-center">
-                <li>
+                <button>
                   <ShoppingCart
                     color="black"
                     className="w-6 h-6 lg:w-[20px] lg:h-[20px]"
                   />
-                </li>
-                <li>
+                </button>
+                <button>
                   <User
                     color="black"
                     className="w-6 h-6 lg:w-[20px] lg:h-[20px]"
                   />
-                </li>
+                </button>
               </div>
             </div>
           </ul>

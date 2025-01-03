@@ -5,8 +5,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Item from "./Item";
 import type { ItemProps } from "@/lib/types";
+import Item from "./Item";
 
 const CarouselComponent = ({ items }: { items: ItemProps[] }) => {
   return (

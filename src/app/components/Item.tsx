@@ -1,6 +1,7 @@
 "use client";
 import { ItemProps } from "@/lib/types";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Rating } from "react-simple-star-rating";
 
 interface Props {
@@ -8,12 +9,23 @@ interface Props {
 }
 
 const Item: React.FC<Props> = ({ item }) => {
-  console.log(item);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    console.log(loading);
+  }, [loading]);
 
   return (
     <div>
       <div>
-        <Image src={item.imgSrc} width={300} height={300} alt={item.name} />
+        <Image
+          onLoadingComplete={() => setLoading(false)}
+          src={item.imgSrc}
+          width={300}
+          height={300}
+          alt={item.name}
+          className={`${loading ? "opacity-0" : "opacity-100"} transition`}
+        />
       </div>
       <div className="w-full">
         <h1 className="lg:text-[16px] text-[13px] font-bold mt-3">
