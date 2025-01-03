@@ -8,12 +8,12 @@ const integralBold = localFont({ src: "../../assets/IntegralCF-Bold.woff" });
 
 const Header: React.FC = () => {
   return (
-    <MaxWidthWrapper className="my-3">
+    <MaxWidthWrapper className="absolute top-0 left-0 bg-white py-6 w-full">
       <header>
         <nav>
           <ul className="flex flex-row items-center w-full justify-between lg:justify-normal">
             <div className="flex flex-row items-center gap-3">
-              <li className="md:hidden block">
+              <li className="lg:hidden block">
                 <Menu className="w-6 h-6" />
               </li>
               <li>

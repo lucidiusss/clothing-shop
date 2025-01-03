@@ -16,6 +16,10 @@ li {
   padding: 0;
 }
 
+svg.star-svg {
+  display: inline;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

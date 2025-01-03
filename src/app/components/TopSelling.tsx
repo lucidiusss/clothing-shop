@@ -1,15 +1,8 @@
-import localFont from "next/font/local";
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ITEMS } from "@/lib";
-import Item from "./Item";
+import localFont from "next/font/local";
+import MaxWidthWrapper from "./MaxWidthWrapper";
+import CarouselComponent from "./Carousel";
 
 const integralBold = localFont({ src: "../../assets/IntegralCF-Bold.woff" });
 
@@ -25,20 +18,7 @@ const TopSelling = () => {
           New Arrivals
         </h1>
         <div className="w-1/2 mx-auto mt-10">
-          <Carousel>
-            <CarouselContent>
-              {topSelling.map((item) => (
-                <CarouselItem
-                  key={item.name}
-                  className="md:basis-1/2 lg:basis-1/3"
-                >
-                  <Item item={item} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+          <CarouselComponent items={topSelling} />
         </div>
         <Button
           className={buttonVariants({

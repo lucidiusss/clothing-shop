@@ -9,9 +9,7 @@ const MaxWidthWrapper = ({
   children: ReactNode;
 }) => {
   return (
-    <div
-      className={cn("h-full mx-auto w-full px-[16px] lg:px-[100px]", className)}
-    >
+    <div className={cn("mx-auto w-full px-[16px] lg:px-[100px]", className)}>
       {children}
     </div>
   );

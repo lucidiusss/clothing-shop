@@ -1,20 +1,16 @@
-import localFont from "next/font/local";
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Item from "./Item";
-import { ITEMS } from "@/lib";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { ITEMS } from "@/lib";
+import { ItemProps } from "@/lib/types";
+import localFont from "next/font/local";
+import CarouselComponent from "./Carousel";
+import MaxWidthWrapper from "./MaxWidthWrapper";
 
 const integralBold = localFont({ src: "../../assets/IntegralCF-Bold.woff" });
 
 const NewArrivals = () => {
-  const newArrivals = ITEMS.filter((item) => item.category === "New Arrivals");
+  const newArrivals: ItemProps[] = ITEMS.filter(
+    (item) => item.category === "New Arrivals"
+  );
 
   return (
     <MaxWidthWrapper className="py-[40px]">
@@ -25,20 +21,7 @@ const NewArrivals = () => {
           New Arrivals
         </h1>
         <div className="w-1/2 mx-auto mt-10">
-          <Carousel>
-            <CarouselContent>
-              {newArrivals.map((item) => (
-                <CarouselItem
-                  key={item.name}
-                  className="md:basis-1/2 lg:basis-1/3"
-                >
-                  <Item item={item} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+          <CarouselComponent items={newArrivals} />
         </div>
         <Button
           className={buttonVariants({
